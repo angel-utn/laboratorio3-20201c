@@ -1,16 +1,17 @@
 /*use master
 go
-drop database bookworm*/
-go
+drop database bookworm
+go*/
 Create Database Bookworm
 go
 Use Bookworm
 go
 Create Table Libros(
 	ID bigint not null identity (1, 1),
-	IDEditorial int not null,
+	IDEditorial int null,
 	IDIdioma int null,
-	Año smallint null,
+	Titulo varchar(100) not null,
+	AÃ±o smallint null,
 	Precio money not null,
 	Paginas smallint not null
 )
@@ -194,9 +195,3 @@ go
 /* Checks */
 
 /* Defaults */
-
-
-
-
-
-
