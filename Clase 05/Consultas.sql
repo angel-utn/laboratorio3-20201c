@@ -1,8 +1,37 @@
 -- 1) Listar para cada autor el Apellido y el Nombre, el sexo, el IDPais y el nombre del país.
--- 2) Listar para cada usuario el Apellido y nombre, el sexo, la edad, la cantidad de días desde que se registró, el nombre del país de nacimiento y el nombre del tipo de usuario.
+Select A.apellidos, A.nombres, A.sexo, P.nombre 
+from Autores as A
+inner join Paises AS P ON P.ID = A.IDPais
+
+-- 2) Listar para cada usuario el Apellido y nombre, el sexo, 
+-- el nombre del país de nacimiento y el nombre del tipo de usuario.
+
+Select U.Apellidos, U.Nombres, U.Sexo, P.Nombre as Pais, TP.Nombre As Tipo, 
+  DateDiff(Day, U.FechaReg, getdate())  As CantDias
+From 
+Usuarios as U
+Inner Join Paises AS P ON P.ID = U.IDPais
+Inner Join TiposUsuarios AS TP ON TP.ID = U.IDTipo
+
 -- 3) Listar para cada libro el título, la cantidad de páginas, el precio y el nombre de la editorial. Sólo listar los libros que posean editorial registrada.
+Select L.Titulo, L.Paginas, L.Precio, E.Nombre 
+From Libros as L
+Inner Join Editoriales AS E ON E.ID = L.IDEditorial
+
 -- 4) Listar para cada libro el título, la cantidad de páginas, el precio y el nombre de la editorial. Listar todos los libros independientemente de si disponen editorial.
+Select L.Titulo, L.Paginas, L.Precio, IsNull(E.Nombre, 'Sin editorial') AS NombreEditorial
+From Libros as L
+Left Join Editoriales as E ON E.ID = L.IDEditorial
+
 -- 5) Listar para cada libro el título, la cantidad de páginas, el precio y el nombre de la editorial. Listar todas las editoriales independientemente de si disponen libros.
+Select L.Titulo, L.Paginas, L.Precio, E.Nombre 
+From Libros as L
+Right Join Editoriales AS E ON E.ID = L.IDEditorial
+
+Select L.Titulo, L.Paginas, L.Precio, E.Nombre 
+From Libros as L
+Full Join Editoriales AS E ON E.ID = L.IDEditorial
+
 -- 6) Listar para cada libro el título, el año, el precio, la cantidad de páginas y el nombre de los géneros asociados al libro.
 -- 7) Listar para cada libro el título, el año, el apellido y nombre del autor y el nombre del país del autor.
 -- 8) Listar para cada usuario el apellido y nombres, el email, el tipo de usuario y el nombre del país, el sexo ('M' - Masculino, 'F' - Femenino, 'X' - Otro género), la edad y la cantidad de días transcurridos desde la registración.
