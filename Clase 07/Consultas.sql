@@ -1,0 +1,32 @@
+-- Listar la cantidad de usuarios.
+-- Listar la cantidad de usuarios cuyo tipo de usuario sea 'Librarian'.
+-- Listar la cantidad de libros en inglés.
+-- Listar la cantidad de libros con editorial.
+-- Listar la cantidad de libros sin editorial.
+-- Listar la cantidad de autores de género masculino y nacidos en Argentina.
+-- Listar el promedio de edad de las autoras de género femenino.
+-- Listar el promedio de edad de los usuarios cuyo tipo de usuario sea 'Free'
+-- Listar el promedio de páginas de los libros publicados en la década del 90
+-- Listar el precio total de todos los libros de la editorial DeBolsillo
+-- Listar la cantidad total de páginas de los libros de Stephen King
+-- Listar la cantidad máxima de páginas entre todos los libros
+-- Listar la cantidad mínima de páginas entre todos los libros
+-- Listar la cantidad máxima de páginas de los libros de Stephen King
+-- Listar el precio mínimo de los libros en Español.
+-- Listar la cantidad de libros distintos que se terminaron de leer en el año 1991.
+-- Por cada usuario, listar apellido y nombres y la cantidad de bibliotecas que crearon. Listar información sólo de los usuarios que crearon bibliotecas.
+-- Por cada usuario, listar apellido y nombres y la cantidad de bibliotecas que crearon. Listar información de todos los usuarios. Si no crearon bibliotecas listarlos contabilizando 0 bibliotecas. Ordenar el listado por apellido de manera creciente.
+-- Por cada biblioteca, listar el apellido y nombre del usuario, el nombre de la biblioteca y la cantidad de libros registrados.
+-- Por cada formato, listar el nombre del formato y la cantidad de libros distintos asociados.
+-- Por cada usuario, listar el apellido y nombre del usuario, el nombre de los libros que registró en sus bibliotecas y cuántas veces registró dichos libros. Ordenarlo de manera decreciente por cantidad.
+-- Por cada autor, listar el precio de libro más caro que haya publicado. Listar apellido y nombres y precio de los libros. Ordenarlo en forma decreciente por cantidad.
+-- Igual al anterior pero incluir a los autores que no editaron libros.
+-- Por cada autor listar el apellido y nombres y la cantidad de veces que sus libros fueron agregado a bibliotecas.
+-- Por cada autor listar el apellido y nombres y el promedio de valoración otorgado por los usuarios de sus libros. Ordenar por mejor promedio de valoración a peor.
+-- Por cada usuario listar el apellido y nombres y el costo total abonado en concepto de libros. Utilizar el precio del libro que indicó en Libros_x_Biblioteca. Mostrar información de los usuarios que no hayan registrado libros con un total de $0. Ordenar de menor a mayor por total abonado.
+-- Por cada usuario listar el apellido y nombres y el costo total en concepto de libros si hubiesen comprado dichos libros al precio que figura en el sistema. Utilizar el precio del libro que se indica en Libros. Mostrar información de los usuarios que no hayan registrado libros con un total de $0.
+-- Por cada autor listar el apellido y nombre y la cantidad de veces que sus libros fueron agregado a bibliotecas. Sólo listar aquellos autores que hayan contabilizado 5 o más libros agregados a bibliotecas.
+-- Por cada autor listar el apellido y nombres y el promedio de valoración otorgado por los usuarios de sus libros. Sólo listar aquellos autores que hayan registrado más de 10 votaciones.
+-- Listar el apellido y nombres de los usuarios que registren más de tres bibliotecas.
+-- Listar los nombres de los países que tengan exactamente tres autores relacionados.
+-- Listar el apellido y nombre de los usuarios de aquellos que hayan pagado (en total) menos por el costo de sus libros que si los hubiesen comprado al costo del sistema.
