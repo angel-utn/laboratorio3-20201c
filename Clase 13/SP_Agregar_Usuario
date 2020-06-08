@@ -1,0 +1,59 @@
+/**
+    Permita agregar un nuevo usuario y además genere una biblioteca
+    a dicho usuario.
+    Usuario: Angel Simón ....
+    Bibliotecas: Biblioteca personal de Angel
+*/
+Create Procedure SP_Agregar_Usuario(
+    @Email varchar(100),
+    @IDPais int,
+    @IDTipo int,
+    @Apellidos varchar(100),
+    @Nombres varchar(100),
+    @Sexo char,
+    @FechaNac date
+)
+AS
+BEGIN
+    Begin try
+        -- ACID
+        -- Atomicity Consistency Isolation Durability
+        Begin transaction
+        -- Agrego usuario
+        Insert into Usuarios Values(
+            @Email,
+            @IDPais,
+            @IDTipo,
+            @Apellidos,
+            @Nombres,
+            @Sexo,
+            getdate(),
+            @FechaNac
+        )
+        -- Obtengo último ID generado
+        Declare @IDUsuario bigint
+        Set @IDUsuario = @@IDENTITY
+        -- Agrego la biblioteca
+        Insert Into Bibliotecas(IDUsuario, FechaCreacion, Nombre)
+        Values (@IDUsuario, getdate(), 'Biblioteca personal de ' + @Nombres)
+        Commit Transaction
+    End try
+    Begin Catch
+        -- Mensaje de error, severidad (int), estado (int)
+        Rollback transaction
+
+        RAISERROR('Error grave al guardar el usuario', 16, 1)
+    End Catch
+End
+
+Exec SP_Agregar_Usuario
+    @Email = 'prueba@utn.edu.ar',
+    @IDPais = 1,
+    @IDTipo = 1,
+    @Apellidos = 'Diaz',
+    @Nombres = 'Hernan',
+    @Sexo = 'M',
+    @FechaNac = '2000-05-10'
+
+    Select * From Usuarios Order By ID Desc
+    Select * From Bibliotecas Order By ID Desc
